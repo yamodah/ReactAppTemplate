@@ -1,7 +1,10 @@
 import "./App.css";
 
 function App() {
-  return <h1>Hello World!</h1>;
+  const googSearch = "https://www.google.com/"
+  const bingSearch = "https://wwww.bing.com"
+  const element = (<p>Hello, would you like to search with<br /><a href={googSearch}>Google</a><br/> or<br /><a href={bingSearch}>Bing</a></p>)
+  return element;
 }
 
 export default App;
