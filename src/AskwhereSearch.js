@@ -1,8 +1,18 @@
+import React, { useState } from "react";
 
 function AskWhereSearch ({name}){
-    const googSearch = "https://www.google.com/"
+    const [consoleMe,setConsoleMe] = useState(false)
+    const googSearch = "https://www.google.com"
     const bingSearch = "https://wwww.bing.com"
-    const element = (<p>{name}, would you like to search with <a href={googSearch}><button>Google</button></a> or <a href={bingSearch}><button>Bing</button></a></p>)
+    const element = (<div>
+         <p>{name}, would you like to search with <a href={googSearch}><button>Google</button></a> or <a href={bingSearch}><button>Bing</button></a></p>
+         <button onClick={()=>{
+             console.log("nice click") 
+             setConsoleMe(!consoleMe)}}> 
+             {consoleMe ? "thank you" :"Console something plz ... anything ... just log something"}
+         </button>
+        </div>
+       )
     return element;
 }
 
