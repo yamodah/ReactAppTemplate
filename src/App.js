@@ -5,8 +5,7 @@ import Greeting from "./Greeting";
 import LogInButton from "./logIn";
 import ResearchList from "./ResearchList";
 import AccountSwitch from "./AccountSwitch";
-
-
+import CoinToss from "./CoinToss";
 
 function App() {
   const researchList1 = [{ done:"no", search:"money"},{ done:"yes", search:"wax"},{ done:"yes", search:"liverpool"}]
@@ -24,6 +23,9 @@ function App() {
     <div>
     <ResearchList list = {researchList1} />
     <LogInButton logIn={logIn} accountHandler={acountSwitcher}/>
+    </div>
+    <div>
+      <CoinToss />
     </div>
   </div>
   )
