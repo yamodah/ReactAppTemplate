@@ -6,6 +6,7 @@ import LogInButton from "./logIn";
 import ResearchList from "./ResearchList";
 import AccountSwitch from "./AccountSwitch";
 import CoinToss from "./CoinToss";
+import FormPractice from "./FormPractice";
 
 function App() {
   const researchList1 = [{ done:"no", search:"money"},{ done:"yes", search:"wax"},{ done:"yes", search:"liverpool"}]
@@ -26,6 +27,9 @@ function App() {
     </div>
     <div>
       <CoinToss />
+    </div>
+    <div>
+      <FormPractice/>
     </div>
   </div>
   )
