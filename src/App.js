@@ -9,6 +9,8 @@ import CoinToss from "./CoinToss";
 import FormPractice from "./FormPractice";
 
 function App() {
+  //array is here to prevent reloading of array with each submission of the form
+  const feelingsArr = []
   const researchList1 = [{ done:"no", search:"money"},{ done:"yes", search:"wax"},{ done:"yes", search:"liverpool"}]
   const [logIn, setLogin] = useState(false)
   const acountSwitcher = () => setLogin(!logIn)
@@ -29,7 +31,7 @@ function App() {
       <CoinToss />
     </div>
     <div>
-      <FormPractice/>
+      <FormPractice array={feelingsArr}/>
     </div>
   </div>
   )
