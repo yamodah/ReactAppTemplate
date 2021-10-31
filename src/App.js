@@ -7,7 +7,7 @@ import ResearchList from "./ResearchList";
 import AccountSwitch from "./AccountSwitch";
 import CoinToss from "./CoinToss";
 import FormPractice from "./FormPractice";
-
+import ApiAndUseEffect from "./ApiAndUseEffect";
 function App() {
   //array is here to prevent reloading of array with each submission of the form
   const feelingsArr = []
@@ -23,17 +23,12 @@ function App() {
       <AccountSwitch logIn={logIn}/>
       <AskWhereSearch />
     </div>
-    <div>
     <ResearchList list = {researchList1} />
     <LogInButton logIn={logIn} accountHandler={acountSwitcher}/>
-    </div>
-    <div>
-      <CoinToss />
-    </div>
-    <div>
-      <FormPractice array={feelingsArr}/>
-    </div>
-    
+    <CoinToss />
+    <FormPractice array={feelingsArr}/>
+    <br/>
+    <ApiAndUseEffect/>
   </div>
   )
 }

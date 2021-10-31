@@ -5,7 +5,7 @@ import ProfileEdit from "./ProfileEdit";
 function ApiAndUseEffect() {
   const [userId, setUserID] = useState(1);
 
-  const userIds = [1, 2, 3, 4];
+  const userIds = [1, 2, 3, 4, 5, 6];
 
   return (
     <div className="App">
