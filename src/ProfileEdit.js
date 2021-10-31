@@ -4,16 +4,31 @@ function ProfileEdit({ userID }) {
   const [user, setUser] = useState({});
 
   useEffect(() => {
+    setUser({});
+    const abortController = new AbortController();
+  
     async function loadUser() {
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/users/${userID}`
-      );
-      const userFromAPI = await response.json();
-      setUser(userFromAPI);
+      try {
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/users/${userID}`,
+          { signal: abortController.signal }
+        );
+        const userFromAPI = await response.json();
+        setUser(userFromAPI);
+      } catch (error) {
+        if (error.name === "AbortError") {
+          // Ignore `AbortError`
+          console.log("Aborted", userID);
+        } else {
+          throw error;
+        }
+      }
     }
-
+  
     loadUser();
-  }, [userID]); // <-- Added dependency on `userID`
+  
+    return () => abortController.abort();
+  }, [userID]);
 
   useEffect(() => {
     if (user.username) {
