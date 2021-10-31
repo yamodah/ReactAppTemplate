@@ -7,9 +7,10 @@ function ResearchList({list}){
     })
     return <table>
         <thead>
-            <tr className="border">
-            <th>SEARCH</th>
-            <th>DONE</th>
+            <tr className="border">    
+                <th>SEARCH</th>
+                
+                <th>DONE</th>
             </tr>
         </thead>
         <tbody>

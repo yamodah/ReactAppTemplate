@@ -11,19 +11,20 @@ import ApiAndUseEffect from "./ApiAndUseEffect";
 function App() {
   //array is here to prevent reloading of array with each submission of the form
   const feelingsArr = []
-  const researchList1 = [{ done:"no", search:"money"},{ done:"yes", search:"wax"},{ done:"yes", search:"liverpool"}]
+  const researchList1 = [{ done:"no", search:"how to write scripts to automate workflow"},{ done:"no", search:"how to make the $$$"},{ done:"yes", search:"pizza near me"}]
   const [logIn, setLogin] = useState(false)
   const acountSwitcher = () => setLogin(!logIn)
 
 
   return( 
   <div style={{display:"flex", flexDirection:"column", alignItems:"center", alignText:"center"}}>
-    <div> 
-      <Greeting language ="fr"/>
-      <AccountSwitch logIn={logIn}/>
-      <AskWhereSearch />
-    </div>
+     
+    <Greeting language ="fr"/>
+    <AccountSwitch logIn={logIn}/>
+    <AskWhereSearch />
+    <br/>
     <ResearchList list = {researchList1} />
+    <br/>
     <LogInButton logIn={logIn} accountHandler={acountSwitcher}/>
     <CoinToss />
     <FormPractice array={feelingsArr}/>
