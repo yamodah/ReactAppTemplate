@@ -33,6 +33,7 @@ function App() {
     <div>
       <FormPractice array={feelingsArr}/>
     </div>
+    
   </div>
   )
 }
