@@ -1,5 +1,5 @@
 import { useState } from "react/cjs/react.development";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link,Switch} from "react-router-dom";
 import "./App.css";
 import AskWhereSearch from "./AskwhereSearch";
 import Greeting from "./Greeting";
@@ -9,6 +9,7 @@ import AccountSwitch from "./AccountSwitch";
 import CoinToss from "./CoinToss";
 import FormPractice from "./FormPractice";
 import ApiAndUseEffect from "./ApiAndUseEffect";
+import NoMatch from "./NONONOTHINGHERE";
 function App() {
   //array is here to prevent reloading of array with each submission of the form
   const feelingsArr = []
@@ -20,7 +21,12 @@ function App() {
   return( 
     <Router>
       <div style={{display:"flex", flexDirection:"column", alignItems:"center", alignText:"center"}}>
-        <Route exact={true} path="/">
+      <Link to="/" style={{marginTop:"25px"}}>HOME</Link>
+      <Link to="/search">SEARCH</Link>
+      <Link to="/misc">MISC</Link>
+      <br/>
+      <Switch>
+        <Route exact path="/">
         <Greeting language ="es"/>
         <AccountSwitch logIn={logIn}/>
         <LogInButton logIn={logIn} accountHandler={acountSwitcher}/>
@@ -37,6 +43,10 @@ function App() {
         <br/>
         <ApiAndUseEffect/>
         </Route>
+        <Route>
+          <NoMatch/>
+        </Route>
+        </Switch>
       </div>
     </Router>
   )
