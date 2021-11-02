@@ -30,13 +30,13 @@ function ProfileEdit({ userID }) {
     return () => abortController.abort();
   }, [userID]);
 
-  useEffect(() => {
-    if (user.username) {
-      document.title = `${user.username} : Edit Profile`;
-    } else {
-      document.title = "Edit Profile";
-    }
-  }, [user]); // Rerun this effect when the user changes
+  // useEffect(() => {
+  //   if (user.username) {
+  //     document.title = `${user.username} : Edit Profile`;
+  //   } else {
+  //     document.title = "Edit Profile";
+  //   }
+  // }, [user]); // Rerun this effect when the user changes
 
   const changeHandler = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
