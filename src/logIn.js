@@ -1,4 +1,5 @@
 
+import React from "react";
 function LogInButton ({logIn,accountHandler}){
 return <button onClick ={accountHandler}>
     {logIn?"Switch to Yassine":"Switch to Yamodah"}

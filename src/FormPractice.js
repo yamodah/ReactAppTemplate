@@ -1,4 +1,4 @@
-import { useState } from "react/cjs/react.development"
+import React, { useState } from "react"
 import FormListGenerator from "./FormListGenerator";
 
 function FormPractice({array}){

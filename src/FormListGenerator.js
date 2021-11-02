@@ -1,4 +1,4 @@
-//import { useState } from "react/cjs/react.development";
+import React from "react";
 
 function FormListGenerator({array,feelings,setFeelings}){
     //accepting props to allow for parent component to be able 
