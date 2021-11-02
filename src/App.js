@@ -1,4 +1,4 @@
-import { useState } from "react/cjs/react.development";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Link,Switch} from "react-router-dom";
 import "./App.css";
 import AskWhereSearch from "./AskwhereSearch";
@@ -27,9 +27,9 @@ function App() {
       <br/>
       <Switch>
         <Route exact path="/">
-        <Greeting language ="es"/>
-        <AccountSwitch logIn={logIn}/>
-        <LogInButton logIn={logIn} accountHandler={acountSwitcher}/>
+          <Greeting language ="es"/>
+          <AccountSwitch logIn={logIn}/>
+          <LogInButton logIn={logIn} accountHandler={acountSwitcher}/>
         </Route>
         <Route path="/search/:userID">
         <AskWhereSearch />
