@@ -16,13 +16,13 @@ function App() {
   const researchList1 = [{ done:"no", search:"how to write scripts to automate workflow"},{ done:"no", search:"how to make the $$$"},{ done:"yes", search:"pizza near me"}]
   const [logIn, setLogin] = useState(false)
   const acountSwitcher = () => setLogin(!logIn)
-
+  const searchLink = logIn?"/search/yamodah":"/search/yassine"
 
   return( 
     <Router>
       <div style={{display:"flex", flexDirection:"column", alignItems:"center", alignText:"center"}}>
       <Link to="/" style={{marginTop:"25px"}}>HOME</Link>
-      <Link to="/search">SEARCH</Link>
+      <Link to={searchLink}>SEARCH</Link>
       <Link to="/misc">MISC</Link>
       <br/>
       <Switch>
@@ -31,7 +31,7 @@ function App() {
         <AccountSwitch logIn={logIn}/>
         <LogInButton logIn={logIn} accountHandler={acountSwitcher}/>
         </Route>
-        <Route path="/search">
+        <Route path="/search/:userID">
         <AskWhereSearch />
         <br/>
         <ResearchList list = {researchList1} />

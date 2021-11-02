@@ -1,3 +1,5 @@
+import React from "react"
+import {useParams} from "react-router-dom"
 function ResearchList({list}){
     const listToResearch = list.map(({search,done},index)=>{
        return (<tr key={index} className="border">
@@ -5,7 +7,9 @@ function ResearchList({list}){
             <td>{done}</td>
         </tr>)
     })
-    return <table>
+    const params = useParams()
+    return( <>
+    <table>
         <thead>
             <tr className="border">    
                 <th>SEARCH</th>
@@ -17,5 +21,8 @@ function ResearchList({list}){
             {listToResearch}
         </tbody>
     </table> 
+    <br/>
+    <h5>Welcome {params.userID}</h5>
+    </>)
 }
 export default ResearchList
